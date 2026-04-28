@@ -3,7 +3,7 @@ package ss5_polymorphism;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Person {
+public abstract class Person {
     private int id;
     private String name;
 
@@ -21,9 +21,7 @@ public class Person {
         return id == person.id && Objects.equals(name, person.name);
     }
 
-    public void work() {
-        System.out.println("Person is working");
-    }
+    public abstract void work();
 
     public void input() {
         Scanner scanner = new Scanner(System.in);

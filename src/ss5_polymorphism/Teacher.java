@@ -1,8 +1,9 @@
 package ss5_polymorphism;
 
+import java.time.LocalTime;
 import java.util.Scanner;
 
-public class Teacher extends Person {
+public class Teacher extends Person implements TimeKeeping, TimeKeeping2 {
     private double salary;
 
     public Teacher() {
@@ -37,5 +38,15 @@ public class Teacher extends Person {
 
     public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public LocalTime checkin() {
+        return LocalTime.of(8, 0, 0);
+    }
+
+    @Override
+    public LocalTime checkout() {
+        return TimeKeeping2.super.checkout();
     }
 }

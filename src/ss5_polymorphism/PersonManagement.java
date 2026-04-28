@@ -11,6 +11,8 @@ public class PersonManagement {
 //        System.out.println(s1.toString());
 //        System.out.println(s1);
 
+//        Person person = new Person();
+
         double x = 2.5;
         int i = (int) x;
 
