@@ -2,12 +2,12 @@ package ss6_collection;
 
 import java.util.Arrays;
 
-public class MyArrayList {
+public class MyArrayList<E> {
     private int capacity;
-    private int[] data;
+    private Object[] data;
     private int size;
 
-    private int[] emptyArray = {};
+    private Object[] emptyArray = {};
 
     public MyArrayList() {
         data = emptyArray;
@@ -15,19 +15,19 @@ public class MyArrayList {
 
     public MyArrayList(int capacity) {
         this.capacity = capacity;
-        this.data = new int[capacity];
+        this.data = new Object[capacity];
     }
 
-    public void add(int value) {
+    public void add(E value) {
         if (this.data == emptyArray) {
             this.capacity = 10;
-            this.data = new int[this.capacity];
+            this.data = new Object[this.capacity];
         }
 
         if (capacity == size) {
             capacity = (int) (1.5 * capacity);
 
-            int[] arr = new int[capacity];
+            Object[] arr = new Object[capacity];
 
             for (int i = 0; i < data.length; i++) {
                 arr[i] = data[i];
